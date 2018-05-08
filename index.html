@@ -26,8 +26,19 @@
 		
 		<script>
 			$(document).ready(function(){
-				//includeHTML();
-				//loadExternalHTML();
+				var p=getParameter('modo');
+				if(p!=null){
+					var inicio = new Date().getTime();
+					console.log(inicio);
+					if (p==1){
+						includeHTML();
+					}else{
+						loadExternalHTML();
+					}
+					var fin = new Date().getTime();
+					console.log(fin);
+					console.log(fin-inicio);
+				}
 			});
 		</script>
 	</head>
