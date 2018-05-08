@@ -26,3 +26,33 @@ function includeHTML() {
     }
   }
 };
+
+function loadExternalHTML(){
+	var z, i, elmnt, file, xhttp, idElement;
+	/*loop through a collection of all HTML elements:*/
+	z = document.getElementsByTagName("*");
+	for (i = 0; i < z.length; i++) {
+		elmnt = z[i];
+		/*search for elements with a certain atrribute:*/
+		file = elmnt.getAttribute("w3-include-html");
+		idElement=elmnt.id;
+		
+		if (file) {
+			//alert(elmnt.id);
+			//alert(('#'+elmnt.id));
+			//$('#'+elmnt.id).load(file,function(){alert('loaded')});
+			
+			elmnt.innerHTML=file;
+			//$('#header').load("header.html");
+			$(document).ready(function(e) {
+				$("#header").load("header.html"); 
+				// $('#header').load("header.html");
+				// $('#header').load('header.html',function(){alert('loaded')});
+				//$('#'+elmnt.id).load(file,function(){alert('loaded')});
+				// $( "#header" ).load( "/header.html" );
+				//alert('#'+elmnt.id);
+				//alert(('#'+elmnt.id).getAttribute("w3-include-html"));
+			});
+		}
+	}
+}

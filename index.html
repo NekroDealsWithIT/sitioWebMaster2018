@@ -5,8 +5,11 @@
 		<!-- https://validator.w3.org/ -->
 		<!-- https://jigsaw.w3.org/css-validator/ -->
 		<meta charset="utf-8">
+		
 		<!-- JS -->
 		<script src="static/js/funciones.js"></script>
+		<!-- jquery -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		
 		<!-- Estilos -->
 		<link href="static/css/clubPelosLocos.css" rel="stylesheet">
@@ -24,11 +27,12 @@
 
 	<body>
 		<h1>placeholder</h1>
-		<div w3-include-html="header.html"></div> 
-		<div w3-include-html="footer.html"></div>
+		<div id="header" w3-include-html="header.html">HOLA</div> 
+		<div id="footer" w3-include-html="footer.html"></div>
 		
 		<script>
 			includeHTML();
+			<!-- loadExternalHTML(); -->
 		</script>
 	</body>
 </html>
