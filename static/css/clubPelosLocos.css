@@ -73,7 +73,7 @@ body{
 	background: var(--naranja);
 	border-radius:0px;
 	border: 5px double;
-	transition: border-radius 10s, background-color 1s ease-out;
+	transition: border-radius 10s, background-color 5s ease-out;
 }
 
 .cabecera img:hover{
