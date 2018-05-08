@@ -1,7 +1,125 @@
 /* clubPelosLocos.css */
-h1{
-	background-color:red;
+:root{
+	--negro:#29272a;
+	--naranja:#f69c21;
+	--amarillopatito:yellow;
+	--grisClarito:#AAA;
+	--grisTopo:#F0F0F0;
+	
+	--negroposta:#000000;
+	--blancoposta:#FFFFFF;
+	
+	--testing:red;
+	
+	--rosa: #f621d2;
+	--purpura: #801f6f;
 }
+
+/* fin variables */
+/* ------------------------------------- */
+/* con esto limpio los estilos */
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
 body{
-	/* background-color:black; */
+	/* background-color:var(--negro); */
+	/* background-image:url("../images/pattern.jpg");  */
+	/* color:white; */
+	/* https://www.myfonts.com/WhatTheFont/ */
+	font-family: arial;
+}
+
+.cabecera{
+	/* lo dejo en rojo para probar donde estoy */
+	/* background-color: red; */
+	
+	display:flex;
+	/* me justifica y ordena horizontalmente */
+	justify-content: space-between;
+	
+	/* centrar verticalmente */
+	align-items:center;
+	
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	margin-top:16px;
+	margin-bottom:24px;
+}
+
+.cabecera h1{
+	color:var(--purpura);
+}
+
+/* *·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*/
+
+/* -------------------------------- */
+/* seccion botonera OJO ver ejemplos con flexbox y float */
+/* -------------------------------- */
+
+/* *·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*·*/
+
+/* agregar especifidad */
+/* .botonera.botonera */
+.botonera{
+	background-color: var(--purpura);
+	/* background-color: var(--testing); */
+	display:block;
+	/* agregamos para limitar la linea */
+	padding-bottom:8px;
+	padding-top:8px;
+	
+	/* agregamos los bordes redondeados */
+	border-radius:10px 10px 0 0;
+	
+	/* para hacer un circulo con 50% de altura y width */
+	/* border-radius:50%; */
+}
+
+.botonera ul{
+	/* margin:10px 5px; */
+	margin-left:32px;
+	display: flex;
+	justify-content: space-between;
+	/* margin-left:auto; */
+	/* margin-right:auto; */
+	list-style-type: none;
+}
+
+.botonera li:last-child{
+	/* background-color:red; */
+	border-right:none;
+}
+.botonera li{
+	text-align:center;
+	flex-grow:1;
+	border-right: 1px solid var(--rosa);	
+
+	padding-top:10px; 
+	padding-bottom:10px; 
+}
+
+.botonera a{
+	color:var(--blancoposta);
+    text-decoration: none;
+	padding:8px 3px;
+
+}
+
+.botonera a:hover{
+	color:var(--negro);
+	background-color:var(--testing);
+	background-color: var(--rosa);
+}
+
+.botonera-lista_formulario{
+	margin-left:156px;
+}
+.botonera-lista_formulario input{
+	/* retomo un poco de relleno en los elemnetos del formulario. padding que perdieron con el selector * */
+	padding:2px 4px;
 }

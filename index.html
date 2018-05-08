@@ -23,16 +23,43 @@
 		
 		-->
 		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+		
+		<script>
+			$(document).ready(function(){
+				//includeHTML();
+				//loadExternalHTML();
+			});
+		</script>
 	</head>
 
 	<body>
-		<h1>placeholder</h1>
-		<div id="header" w3-include-html="header.html">HOLA</div> 
-		<div id="footer" w3-include-html="footer.html"></div>
-		
-		<script>
-			includeHTML();
-			<!-- loadExternalHTML(); -->
-		</script>
+		<content class="content">
+			<div class="cabecera">
+				<a href="index.html">
+					<img src="static/images/paw.png" alt="Ir a home">
+				</a>
+				<h1>Club de los pelos locos</h1>
+			</div><!--Cierra .cabecera -->
+			<div class="botonera">
+				<ul>
+					<li><a href="#">				Guia peluda</a></li>
+					<li><a href="#">				Productos</a></li>
+					<li><a href="#">				Guia mascotera</a></li>
+					<li><a href="#">				Mi mascota Rockstar</a></li>
+					<li><a href="#">				Una pata amiga</a></li>
+					<!-- <li>
+						<form class="botonera-lista_formulario" action="" method="">
+							<input type="text" placeholder="Buscar en el sitio">
+							<input type="submit" value="Buscar">
+						</form>
+					</li> -->
+				</ul>
+			</div><!-- Cierra botonera -->
+
+			<div id="header" w3-include-html="header.html">HOLA</div> 
+			<div id="footer" w3-include-html="footer.html"></div>
+			<input type="button" value="Via W3C" onclick="includeHTML()">
+			<input type="button" value="Via JQUERY.LOAD" onclick="loadExternalHTML()">
+		</content>
 	</body>
 </html>
