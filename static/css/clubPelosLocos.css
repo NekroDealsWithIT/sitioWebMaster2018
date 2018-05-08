@@ -14,6 +14,7 @@
 	--rosa: #f621d2;
 	--purpura: #801f6f;
 	--verdeBrillante:#33ff00;
+	--colorFondo:#AAA;
 }
 
 /* fin variables */
@@ -26,13 +27,27 @@
 }
 
 body{
-	/* background-color:var(--negro); */
+	background-color:var(--negro);
 	/* background-image:url("../images/pattern.jpg");  */
 	/* color:white; */
 	/* https://www.myfonts.com/WhatTheFont/ */
 	font-family: arial;
 }
-
+.contenedor{
+	background-color:var(--grisClarito);
+	max-width:1000px;
+	/* 
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:15px;
+	margin-bottom:15px;
+	 */
+	margin:15px auto 15px auto;
+	padding:15px;
+	
+	/* agregamos los bordes redondeados */
+	border-radius:10px 10px 0 0;
+}
 .cabecera{
 	/* lo dejo en rojo para probar donde estoy */
 	/* background-color: red; */
@@ -54,9 +69,19 @@ body{
 
 .cabecera img{
     max-width: 100%;
-    height: 40px;
+    height: 50px;
+	background: var(--naranja);
+	border-radius:0px;
+	border: 5px double;
+	transition: border-radius 10s, background-color 1s ease-out;
 }
 
+.cabecera img:hover{
+    background: var(--verdeBrillante);
+	border-radius:100%;
+	transition: border-radius 2s, background-color 1s ease-out;
+
+}
 
 .cabecera h1{
 	color:var(--purpura);

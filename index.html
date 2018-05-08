@@ -46,7 +46,7 @@
 	</head>
 
 	<body>
-		<content class="content">
+		<div class="contenedor">
 			<div class="cabecera">
 				<a href="index.html">
 					<img src="static/images/paw.png" alt="Ir a home">
@@ -69,30 +69,32 @@
 				</ul>
 			</div><!-- Cierra botonera -->
 			
-			<br><hr><br>
-			<h1>Carga dinamica</h1>
-			<br><hr><br>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<div id="header" w3-include-html="header.html">HOLA</div> 
-			<div id="footer" w3-include-html="footer.html"></div>
-			<br><hr><br>
-			<h1>FIN DE Carga dinamica</h1>
-			<br><hr><br>
-			<input type="button" value="Via W3C" onclick="includeHTML()">
-			<input type="button" value="Via JQUERY.LOAD" onclick="loadExternalHTML()">
-		</content>
+			<div id="pruebaCargaDinamica"><!-- prueba de carga dinamica -->
+				<br><hr><br>
+				<h1>Carga dinamica</h1>
+				<br><hr><br>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="footer" w3-include-html="footer.html"></div>
+				<br><hr><br>
+				<h1>FIN DE Carga dinamica</h1>
+				<br><hr><br>
+				<input type="button" value="Via W3C" onclick="includeHTML()">
+				<input type="button" value="Via JQUERY.LOAD" onclick="loadExternalHTML()">
+			</div><!-- fin prueba de carga dinamica -->
+		</div>
 	</body>
 </html>
