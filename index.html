@@ -31,8 +31,10 @@
 					var inicio = new Date().getTime();
 					console.log(inicio);
 					if (p==1){
+						console.log("Carga dinamica Via W3C");
 						includeHTML();
 					}else{
+						console.log("Carga dinamica Via JQUERY.LOAD");
 						loadExternalHTML();
 					}
 					var fin = new Date().getTime();
