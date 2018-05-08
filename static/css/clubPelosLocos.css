@@ -13,6 +13,7 @@
 	
 	--rosa: #f621d2;
 	--purpura: #801f6f;
+	--verdeBrillante:#33ff00;
 }
 
 /* fin variables */
@@ -113,14 +114,18 @@ body{
 	color:var(--blancoposta);
     text-decoration: none;
 	padding:8px 3px;
-
+	transition: color 3s;
 }
 
 .botonera a:hover{
-	color:var(--negro);
+	color:var(--verdeBrillante);
+/*
 	background-color:var(--testing);
 	background-color: var(--rosa);
-}
+ */
+	font-weight:500;
+	transition: color .2s;
+ }
 
 .botonera-lista_formulario{
 	margin-left:156px;
