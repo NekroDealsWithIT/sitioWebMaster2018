@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  	<head>
+		<!-- archivo index.html -->
+		<!-- https://validator.w3.org/ -->
+		<!-- https://jigsaw.w3.org/css-validator/ -->
+		<meta charset="utf-8">
+		
+		<!-- --------------------- JS --------------------- -->
+		<script type="text/javascript" src="static/js/funciones.js"></script>
+		<!-- configuraciones de pruebas para google -->
+		<script type="text/javascript" src="static/js/googleStuffConfig.js"></script>
+		<!-- Necesario para las apis de google maps -->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+		<script type="text/javascript">
+			function cargarAlInicio(){
+				initGmaps('map',-34.600710,-58.384476,-34.600710,-58.384476,'Teatro Colon',14,0);
+				initGmaps('map2',-34.598289,-58.420123,-34.598289,-58.420123,'Utn medrano',16,1);
+				initGmaps('map3',-34.659792,-58.468368,-34.659792,-58.468368,'Campus UTN',15,2);
+				initGmapsArray('map3',-34.659792,-58.468368,[[-34.598289,-58.420123,'Utn Medrano'],[-34.659792,-58.468368,'Campus UTN']],11,0);
+				initGmapsArray('map2',-34.659792,-58.468368,[],11,1);
+			}
+		</script>
+
+
+
+		<!-- --------------------- FIN JS --------------------- -->
+		
+		<!-- jquery -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		
+		<!-- Estilos -->
+		<link href="static/css/clubPelosLocos.css" rel="stylesheet">
+
+		<style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: auto;
+                height: 100px;
+            }
+			/* segundo mapa */
+			#map2 {
+                width: 250px;
+                height: 250px;
+            }
+			#map3 {+
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+		<!-- favicon -->
+		<title>TEST Sandbox</title>
+		<link rel="shortcut icon" type="image/png" href="static/images/favicon/test.png"/>
+		
+		<!-- llamada a fuente de google 
+				1er paso pegar la url que nos da google/fonts
+		
+		-->
+		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	</head>
+
+	<body onload="cargarAlInicio();">
+		<div class="contenedor">
+			<h1>Testing!</h1>
+			<hr><br><br><br>
+			<h1>Mapa loco</h1>
+			<div id="map"></div>
+			<div id="map2"></div>
+			<div id="map3"></div>
+		</div>
+	</body>
+</html>
