@@ -11,7 +11,12 @@
 		<!-- configuraciones de pruebas para google -->
 		<script type="text/javascript" src="static/js/googleStuffConfig.js"></script>
 		<!-- Necesario para las apis de google maps -->
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+		<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
+		<!-- Necesario para las apis de geocoding -->
+		<!-- &callback=initMap -->
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs3mgas-iswTu70pIQSXuk45AdrQtxb_4"></script>
+		<!-- https://developers.google.com/maps/documentation/javascript/tutorial -->
+		<!-- https://cloud.google.com/maps-platform/ -->
 		<script type="text/javascript">
 			function cargarAlInicio(){
 				initGmaps('map',-34.600710,-58.384476,-34.600710,-58.384476,'Teatro Colon',14,0);
@@ -19,6 +24,16 @@
 				initGmaps('map3',-34.659792,-58.468368,-34.659792,-58.468368,'Campus UTN',15,2);
 				initGmapsArray('map3',-34.659792,-58.468368,[[-34.598289,-58.420123,'Utn Medrano'],[-34.659792,-58.468368,'Campus UTN']],11,0);
 				initGmapsArray('map2',-34.659792,-58.468368,[],11,1);
+				<!-- document.getElementById('address').addEventListener('onblur', function() { -->
+					<!-- geocodeAddress(document.getElementById('address').value); -->
+				<!-- }); -->
+				
+				document.getElementById('submit').addEventListener('onclick', 
+					function() {
+							geocodeAddress(document.getElementById('address').value); 
+					}
+				); 
+				//onclick="geocodeAddress(document.getElementById('address').value);"
 			}
 		</script>
 
@@ -43,7 +58,11 @@
                 width: 250px;
                 height: 250px;
             }
-			#map3 {+
+			#map3 {
+                width: 500px;
+                height: 500px;
+            }
+			#mapGeocode{
                 width: 500px;
                 height: 500px;
             }
@@ -67,6 +86,12 @@
 			<div id="map"></div>
 			<div id="map2"></div>
 			<div id="map3"></div>
+			
+			<div id="floating-panel">
+			  <input id="address" type="textbox" value="Utn buenos aires">
+			  <input id="submit" type="button" value="Buscar" onclick="geocodeAddress(document.getElementById('address').value);">
+			</div>
+			<div id="mapGeocode"></div>
 		</div>
 	</body>
 </html>

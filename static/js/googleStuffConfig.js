@@ -188,6 +188,7 @@ function initGmapsArray(idComponente,posLat,posLng,markLatLngArray,zoom,IDStyleM
 	// Let's also add a marker while we're at it
 	markLatLngArray.forEach(function(posicion) {
 			var lat=posicion[0],lng=posicion[1],titulo=posicion[2];
+			//console.log(lat+' '+posicion+' '+titulo);
 			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(lat, lng),
 				map: map,
@@ -207,4 +208,38 @@ function initGmapsArray(idComponente,posLat,posLng,markLatLngArray,zoom,IDStyleM
 	});
 	*/
 }
+
+function geocodeAddress(direccion) {
+	
+	if (direccion===undefined||direccion==""){
+		//return false;
+	}
+	
+	var geocoder = new google.maps.Geocoder();
+	//var address = document.getElementById('address').value;
+	geocoder.geocode({'address': direccion}, function(results, status) {
+	if (status === 'OK') {
+		var posLat=results[0].geometry.viewport.f.f;
+		var posLng=results[0].geometry.viewport.b.f;					
+
+		posLat=results[0].geometry.location.lat().toFixed(6);
+		posLng=results[0].geometry.location.lng().toFixed(6);
+
+		var markLatLngArray=[[posLat,posLng,results[0].formatted_address+' ('+direccion+')']];
+		var zoom=16;
+		var IDStyleMapa=1;
+		initGmapsArray('mapGeocode',posLat,posLng,markLatLngArray,zoom,IDStyleMapa);
+		/*
+		//resultsMap.setCenter(results[0].geometry.location);
+		<!-- var marker = new google.maps.Marker({ -->
+		  <!-- map: resultsMap, -->
+		  <!-- position: results[0].geometry.location -->
+		<!-- }); -->
+		*/
+	} else {
+		alert('Geocode was not successful for the following reason: ' + status);
+	}
+	});
+}
+
 
