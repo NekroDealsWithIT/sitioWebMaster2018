@@ -34,7 +34,7 @@ function includeHTML() {
       return;
     }
   }
-}
+};
 
 function loadExternalHTML(){
 	var z, i, elmnt, file;
@@ -62,57 +62,87 @@ function getParameter(parametro){
 -----------------------------------------------------
 	Funciones de tablas
 -----------------------------------------------------
-*/
-
-
 /*
+	//Como armarlo
+	var arrayTH=[[
+				 ['Línea Evolución<BR>Vigencia del 01/05/2018 al 31/05/2018','prendarios-lineas-table-linea','','rowspan="7"'],
+				 ['Plazo (meses)','prendarios-lineas-table-meses'],
+				 ['Tasa Nominal Anual (TNA)','prendarios-lineas-table-meses'],
+				 ['Tasa Efectiva Anual (TEA)'],
+				 ['CFT (Efectivo S/IVA)'],
+				 ['CFT (Efectivo C/IVA)']
+				]];//Array de headers
 
-arrayTable
-[
-	[
-		['pepe1','clase'],
-		['pepe2','','idTD']
-	],
-	[
-		['Juan1'],
-		['Juan2']
-	]
-]
-arrayTh
-	['Header1','Header2']
-
-generateTable([[['item1','clasePrueba'],['item2','','idprueba']],[['item3'],['item4','claseItem4','idItem4']]],['header1','header2'],'claseTable','idTable')
-generateTable(arrayTable,arrayTH,'claseTable','idTable')
+	var arrayTD=[
+				 [['12','prendarios-lineas-table-azul'],['31,50%'],['36,47%'],['43,36%'],['54,33%']],
+				 [['18','prendarios-lineas-table-azul'],['31,50%'],['36,47%'],['43,21%'],['54,09%']],
+				 [['24','prendarios-lineas-table-azul'],['31,50%'],['36,47%'],['43,36%'],['53,78%']],
+				 [['36','prendarios-lineas-table-azul'],['31,50%'],['36,47%'],['42,99%'],['53,19%']],
+				 [['48','prendarios-lineas-table-azul'],['31,50%'],['36,47%'],['41,86%'],['52,29%']],
+				 [['60','prendarios-lineas-table-azul'],['31,50%'],['36,47%'],['41,86%'],['51,28%']]
+				];//Array de datos
+	var claseTable='prendarios-lineas-table',
+		
+		idTable='sin ID', //ID de table				
+		atribsTable='style="background-color: rebeccapurple; color:yellow;"',//que atribs para el table
+		headTable=false,//con headTable
+		bodyTable=false;//con bodyTable
+	// asi se llena el div
+	superTable.innerHTML=generateTable(arrayTD,arrayTH,claseTable,idTable,atribsTable,headTable,bodyTable);
 */
-function generateTable(arrayTable,arrayTH='',claseTable='',idTable='',attribsTable=''){
+function generateTable(arrayTable,arrayTH='',claseTable='',idTable='',atribsTable='',headTable=false,bodyTable=false){
 	var table='<table'+
 				((claseTable!=''&&claseTable!=undefined)?' class="'+claseTable+'"':'')+
 				((idTable!=''&&idTable!=undefined)?' id="'+idTable+'"':'')+
-				((attribsTable!=''&&attribsTable!=undefined)?' '+attribsTable:'')+
+				((atribsTable!=''&&atribsTable!=undefined)?' '+atribsTable:'')+
 				'>\n';
+	
 	if(arrayTH!=''&&arrayTH!=undefined){
-		table+='\t<TR>\n';
-		arrayTH.forEach(function(TH) {
-			table+='\t\t<TH>\n'+
-					'\t\t\t'+TH+'\n'+
-					'\t\t</TH>\n';
+		if(headTable){
+			table+='<THEAD>\n<TR>\n';
+		}else{
+			table+='<TR>\n';
+		}
+		arrayTH.forEach(function(arrayTHvalues) {
+			arrayTHvalues.forEach(function(TH) {
+				if (TH!=undefined){
+					var valueTH=TH[0],classTH=TH[1],idTH=TH[2],attribTH=TH[3];
+					table+='<TH'+ 
+						((classTH!=undefined&&classTH!='')?' class="'+classTH+'"':'') +
+						((idTH!=undefined&&idTH!='')?' id="'+idTH+'"':'') +
+						((attribTH!=undefined&&attribTH!='')?' '+attribTH:'') +
+						'>\n'+valueTH+'\n</TH>\n';
+						'</TH>\n';
+				}
+			});
 		});
-		table+='\t</TR>\n'
+		if(headTable){
+			table+='</TR>\n</THEAD>\n';
+		}else{
+			table+='</TR>\n';
+		}
+	}
+	if(bodyTable){
+		table+=((arrayTable!=''&&arrayTable!=undefined)?'<TBODY>\n':'');
 	}
 	arrayTable.forEach(function(arrayTD) {
-		table+='\t<TR>\n'
+		table+='<TR>\n'
 		arrayTD.forEach(function(TD){
 			if (TD!=undefined){
-				var valueTD=TD[0],classTD=TD[1],idTD=TD[2],attribTD=TD[3];
-				table+='\t\t<TD'+ 
+				var valueTD=TD[0],classTD=TD[1],idTD=TD[2],atribTD=TD[3];
+				table+='<TD'+ 
 					((classTD!=undefined&&classTD!='')?' class="'+classTD+'"':'') +
 					((idTD!=undefined&&idTD!='')?' id="'+idTD+'"':'') +
-					((attribTD!=undefined&&attribTD!='')?' '+attribTD:'') +
-					'>\n\t\t\t'+valueTD+'\n\t\t</TD>\n';
+					((atribTD!=undefined&&atribTD!='')?' '+atribTD:'') +
+					'>\n'+valueTD+'\n</TD>\n';
 			}
 		});
-		table+='\t</TR>\n'
+		table+='</TR>\n'
 	});
+	if(bodyTable){
+		table+=((arrayTable!=''&&arrayTable!=undefined)?'</TBODY>\n':'');
+	}
+
 	table+='</table>'
 	return table
 }
