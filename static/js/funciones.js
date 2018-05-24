@@ -34,7 +34,7 @@ function includeHTML() {
       return;
     }
   }
-};
+}
 
 function loadExternalHTML(){
 	var z, i, elmnt, file;
@@ -84,11 +84,11 @@ arrayTh
 generateTable([[['item1','clasePrueba'],['item2','','idprueba']],[['item3'],['item4','claseItem4','idItem4']]],['header1','header2'],'claseTable','idTable')
 generateTable(arrayTable,arrayTH,'claseTable','idTable')
 */
-function generateTable(arrayTable,arrayTH='',claseTable='',idTable='',attribs=''){
+function generateTable(arrayTable,arrayTH='',claseTable='',idTable='',attribsTable=''){
 	var table='<table'+
 				((claseTable!=''&&claseTable!=undefined)?' class="'+claseTable+'"':'')+
 				((idTable!=''&&idTable!=undefined)?' id="'+idTable+'"':'')+
-				((attribs!=''&&attribs!=undefined)?' '+attribs:'')+
+				((attribsTable!=''&&attribsTable!=undefined)?' '+attribsTable:'')+
 				'>\n';
 	if(arrayTH!=''&&arrayTH!=undefined){
 		table+='\t<TR>\n';
