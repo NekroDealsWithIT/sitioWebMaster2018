@@ -41,6 +41,9 @@
 					console.log(fin);
 					console.log(fin-inicio);
 				}
+
+				// cargar superTable
+				superTable.innerHTML=generateTable([[['item1','clasePrueba'],['item2','','idprueba']],[['item3'],['item4','claseItem4','idItem4']]],['header1','header2'],'claseTable','idTable');
 			});
 		</script>
 	</head>
@@ -76,24 +79,13 @@
 				<br><hr><br>
 				<h1>Carga dinamica</h1>
 				<br><hr><br>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
-				<div id="footer" w3-include-html="footer.html"></div>
-				<div id="header" w3-include-html="header.html">HOLA</div> 
+				<div id="header" w3-include-html="header.html"></div> 
 				<div id="footer" w3-include-html="footer.html"></div>
 				<br><hr><br>
 				<h1>FIN DE Carga dinamica</h1>
+				<br><hr><br>
+				<h1>Super tabla dinamica</h1>
+				<div id='superTable'></div>
 				<br><hr><br>
 				<input type="button" value="Via W3C" onclick="includeHTML()">
 				<input type="button" value="Via JQUERY.LOAD" onclick="loadExternalHTML()">

@@ -60,6 +60,65 @@ function getParameter(parametro){
 }
 /*
 -----------------------------------------------------
+	Funciones de tablas
+-----------------------------------------------------
+*/
+
+
+/*
+
+arrayTable
+[
+	[
+		['pepe1','clase'],
+		['pepe2','','idTD']
+	],
+	[
+		['Juan1'],
+		['Juan2']
+	]
+]
+arrayTh
+	['Header1','Header2']
+
+generateTable([[['item1','clasePrueba'],['item2','','idprueba']],[['item3'],['item4','claseItem4','idItem4']]],['header1','header2'],'claseTable','idTable')
+generateTable(arrayTable,arrayTH,'claseTable','idTable')
+*/
+function generateTable(arrayTable,arrayTH='',claseTable='',idTable='',attribs=''){
+	var table='<table'+
+				((claseTable!=''&&claseTable!=undefined)?' class="'+claseTable+'"':'')+
+				((idTable!=''&&idTable!=undefined)?' id="'+idTable+'"':'')+
+				((attribs!=''&&attribs!=undefined)?' '+attribs:'')+
+				'>\n';
+	if(arrayTH!=''&&arrayTH!=undefined){
+		table+='\t<TR>\n';
+		arrayTH.forEach(function(TH) {
+			table+='\t\t<TH>\n'+
+					'\t\t\t'+TH+'\n'+
+					'\t\t</TH>\n';
+		});
+		table+='\t</TR>\n'
+	}
+	arrayTable.forEach(function(arrayTD) {
+		table+='\t<TR>\n'
+		arrayTD.forEach(function(TD){
+			if (TD!=undefined){
+				var valueTD=TD[0],classTD=TD[1],idTD=TD[2],attribTD=TD[3];
+				table+='\t\t<TD'+ 
+					((classTD!=undefined&&classTD!='')?' class="'+classTD+'"':'') +
+					((idTD!=undefined&&idTD!='')?' id="'+idTD+'"':'') +
+					((attribTD!=undefined&&attribTD!='')?' '+attribTD:'') +
+					'>\n\t\t\t'+valueTD+'\n\t\t</TD>\n';
+			}
+		});
+		table+='\t</TR>\n'
+	});
+	table+='</table>'
+	return table
+}
+
+/*
+-----------------------------------------------------
 	Funciones numericas
 -----------------------------------------------------
 */
