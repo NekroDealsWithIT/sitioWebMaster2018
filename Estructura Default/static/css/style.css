@@ -1,0 +1,93 @@
+/*estilos por default CSS*/
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* calc.css */
+h1{
+	/* Minimo tamaño de fuente es 16px */
+	font-size:calc(16px + 2vmax);
+	font-weight: normal;
+}
+
+/* filtros.css */
+/* http://bennettfeely.com/filters/ */
+/* https://www.sarasoueidan.com/demos/css-blender/ */
+img{
+	filter:blur(10px); 
+	/* 0 con colores 1 sin colores */
+	filter:grayscale(0.898763); 
+	/* cambia de 0 a 360 grados los colores segun una paleta redonda*/
+	/* brightness 1 es 100% 0 es 0% aca abajo estoy metiendo dos filtros */
+	filter:hue-rotate(0deg) brightness(0.6);
+	filter:brightness(0.6);
+	
+	transition: filter 0.2s;
+	will-change:filter;
+}
+
+img:hover{
+	filter:blur(0px); 
+	filter:grayscale(0); 
+	filter:hue-rotate(60deg);
+	filter:hue-rotate(720deg);
+	transition: filter 1.5s;
+	will-change:filter;
+}
+
+
+/*
+	Mediaqueries
+*/
+/*
+	media queries ideales
+	1920+
+	1440-
+	1200
+	1024 --> ipad landscape
+	768	--> portrait
+	480
+	320
+*/
+/*mediaquery con 1024*/
+@media (max-width:1024px){
+/*	.container{
+		width: 100%;
+	}*/
+}
+/* Si el tamaño de pantalla es menor O IGUAL a 800px */
+@media (min-width:800px){
+	body{
+		/*background-color:yellow;*/
+	}
+}
+/* Si el tamaño de pantalla es menor O IGUAL a 400px */
+@media (min-width:1200px){
+	body{
+		/*background-color:sky;*/
+	}
+}	
+
+/*
+orientation depende de la proporcion
+	Portrait mas alto que ancho
+	Landscape mas ancho que alto 
+*/
+
+/* SI la orientacion es portrait */
+@media (orientation:portrait){
+	body{
+		/*background-color:red;*/
+	}
+}
+
+
+/* SI la orientacion es landscape */
+/*puedo juntar dos condiciones con and*/
+@media (orientation:landscape) and (max-width: 800px) {
+	body{
+		/*background-color:blue;*/
+	}
+}	
