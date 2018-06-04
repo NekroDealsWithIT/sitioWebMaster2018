@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+body{
+	background-color: black;
+	color:white;
+}
+a{
+	color: green;
+}
+a:visited{
+	color: red;
+}
+.content{
+	width: 90%;
+	margin: auto;
+	background-image: url(../img/warframe-lotus-wallpaper.png);
+}
+.content>div{
+	margin: auto;
+	align-self: center;
+}
+.content>div>div{
+	flex-grow: 1;
+}
+
+.completed{
+	text-decoration: line-through;
+}
+.completed::after{
+	content: "\2714 (Completa)";
+	color:green;
+	text-decoration: none;
+}
+#botonera{
+	display: flex;
+	/*margin:auto;*/
+	position: -webkit-sticky;
+  	position: sticky;
+  	color:red;
+  	top:25px;
+  	padding: 2px 0 0 12px;
+  	justify-content: flex-end;	
+  	z-index: 5;
+}
+.botonera{
+	/*width: 45%;*/
+	background: black;
+}
+.headLogo{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px; 
+}
+.headLogo img{
+	height: 50px;
+	position: relative;
+	align-self: center;
+}
+h3{
+	margin:auto;
+	position: -webkit-sticky;
+  	position: sticky;
+  	background:#B8C1C8;
+  	color:red;
+  	padding: 2px 0 0 12px;
+  	top:-1px;
+}
+.barraProgreso{
+	background: black;
+	width: 100%;
+}
+.hidden{
+	display: none;
+}
+.infoNoFetch{
+	color:green;
+	background: black;
+}
+
+.infoFetch{
+	color:yellow;
+	background: red;
+}
+
+.whatsWarframeDiv{
+	width: 90%;
+	margin: auto;
+}
+
+.pDay{
+	background: black;
+	color:yellow;
+	display: inline;
+	font-size:3rem;
+}
+.pDay::after, .pDay::before{
+	content: "(\263C)";
+	color:red;
+}
+.pNight{
+	background: black;
+	color:red;
+	display: inline;
+	font-size:3rem;
+}
+.pNight::after, .pNight::before{
+	content: "(\1F319)";
+	color:green;
+}
+#sortie{
+	border:1px dotted;
+}
+
+/*tables*/
+.tableSortie{
+	border: 1px dashed red;
+	margin: auto;
+}
+.tableAlerts, .tableInvasion, .tableFisures, .tableSortie{
+	border: 1px dashed red;
+	width: 90%; 
+	margin: auto;
+	margin-top: 15px;
+}
+.tableAlerts img{
+	width: 50px;
+}
+.tableAlerts th{
+	width: 1%;
+}
+.tableInvasion img{
+	width: 50px;
+}
+.invTH{
+	width: 1%;
+}
+.sonidos ul{
+	margin:auto;
+}
+.news img{
+	width: 50px;
+	transform-origin: 10px 0;
+}
+
+.enlargeMe img:hover{
+	transform: scale(5.5) translateX(100px) translateY(-10px);
+	transition-duration: .5s .8s
+}
+/*color facciones*/
+.corpus{
+	background-color: blue;
+	color: white;
+}
+.grineer{
+	background-color: burlywood;
+	color: darkred;
+}
+.infested, .crossfire{
+	background-color: aquamarine;
+	color: black;
+}
+.orokin, .corrupted{
+	background-color: rebeccapurple;
+	color: white;
+}
